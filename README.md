@@ -1,6 +1,11 @@
 # Codebook
 An opinionated coding guide
 
+Contents:
+- [Formatting](#formatting)
+- [Code Structure](#code-structure)
+- [Dev Ops](#dev-ops)
+
 ## Formatting
 
 ### Linting
@@ -27,6 +32,22 @@ An opinionated coding guide
   - Abstracted (API) calls
   - Page routing
   - Reading/writing to state
+
+### RESTful APIs
+
+- Use consistent nomenclature when referring to methods. The nomenclature below is borrowed from Django Rest Framework.
+
+| Method    | Name     |
+| --------- | -------- |
+| `POST`    | create   |
+| `GET` 1   | retrieve |
+| `GET` *n* | list     |
+| `DELETE`  | destroy  |
+| `PATCH`   | update   |
+| `PUT`     | replace  |
+
+- Frontend apps: API calls should never be made directly from components or views.
+- Use functions to set/unset tokens instead of injecting tokens for each call.
 
 ### State
 
@@ -69,19 +90,3 @@ An opinionated coding guide
 
 - Tag each release
 - Track meaningful changes, most especially breaking changes, in a `CHANGELOG.md` file.
-
-## RESTful APIs
-
-- Use consistent nomenclature when referring to methods. The nomenclature below is borrowed from Django Rest Framework.
-
-| Method    | Name     |
-| --------- | -------- |
-| `POST`    | create   |
-| `GET` 1   | retrieve |
-| `GET` *n* | list     |
-| `DELETE`  | destroy  |
-| `PATCH`   | update   |
-| `PUT`     | replace  |
-
-- Frontend apps: API calls should never be made directly from components or views.
-- Use functions to set/unset tokens instead of injecting tokens for each call.
